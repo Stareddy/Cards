@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.jaraspi.cards.databinding.FragmentCrossBinding;
 import com.jaraspi.cards.databinding.FragmentOverviewBinding;
 
 public class FragmentOverview extends Fragment {

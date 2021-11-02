@@ -1,8 +1,10 @@
 package com.jaraspi.cards;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+    boolean singleBack = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,5 +53,24 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (singleBack) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.singleBack = true;
+        Toast.makeText(this, "Noch einmal um die Anwendung zu schließen", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                singleBack = false;
+                finish();
+            }
+        }, 2);
     }
 }
