@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FragmentOverview">
+
+    <fragment
+        android:id="@+id/FragmentOverview"
+        android:name="com.jaraspi.cards.FragmentOverview"
+        tools:layout="@layout/fragment_overview">
+
+        <action
+            android:id="@+id/action_Jump_To_Diamond"
+            app:destination="@id/FragmentDiamond" />
+
+        <action
+            android:id="@+id/action_Jump_To_Spade"
+            app:destination="@id/FragmentSpade" />
+
+        <action
+            android:id="@+id/action_Jump_To_Cross"
+            app:destination="@id/FragmentCross" />
+
+        <action
+            android:id="@+id/action_Jump_To_Heart"
+            app:destination="@id/FragmentHeart" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/FragmentDiamond"
+        android:name="com.jaraspi.cards.FragmentDiamond"
+        tools:layout="@layout/fragment_diamond">
+
+        <action
+            android:id="@+id/action_Jump_Back_To_Overview"
+            app:destination="@id/FragmentOverview" />
+    </fragment>
+    <fragment
+        android:id="@+id/FragmentSpade"
+        android:name="com.jaraspi.cards.FragmentSpade"
+        tools:layout="@layout/fragment_spade">
+
+        <action
+            android:id="@+id/action_Jump_Back_To_Overview"
+            app:destination="@id/FragmentOverview" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/FragmentCross"
+        android:name="com.jaraspi.cards.FragmentCross"
+        tools:layout="@layout/fragment_cross">
+
+        <action
+            android:id="@+id/action_Jump_Back_To_Overview"
+            app:destination="@id/FragmentOverview" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/FragmentHeart"
+        android:name="com.jaraspi.cards.FragmentHeart"
+        tools:layout="@layout/fragment_heart">
+
+        <action
+            android:id="@+id/action_Jump_Back_To_Overview"
+            app:destination="@id/FragmentOverview" />
+    </fragment>
+</navigation>
