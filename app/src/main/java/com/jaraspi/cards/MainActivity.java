@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         if (singleBack) {
             super.onBackPressed();
+            finish();
             return;
         }
 
@@ -69,8 +70,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 singleBack = false;
-                finish();
             }
-        }, 2);
+        }, 2000);
     }
 }
